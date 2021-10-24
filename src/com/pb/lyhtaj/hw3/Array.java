@@ -7,7 +7,7 @@ public class Array {
     public static void main(String[] args) {
         int sum = 0;
         int count = 0;
-        int[] array = new int[3];
+        int[] array = new int[10];
         boolean isSorted = false;
         int xxx;
         Scanner skan = new Scanner(System.in);
