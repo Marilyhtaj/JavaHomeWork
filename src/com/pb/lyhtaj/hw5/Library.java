@@ -34,7 +34,7 @@ public class Library {
         reader2.setDob("01.10.1993");
         reader2.setNumberphone("0665896314");
 
-        reader3.setFio("Петров И.И.");
+        reader3.setFio("Марин А.Р.");
         reader3.setNumberticket(2365);
         reader3.setFakultet("Математический");
         reader3.setDob("04.11.1980");
@@ -49,7 +49,8 @@ public class Library {
         System.out.println(reader2.getinfo());
         System.out.println(reader3.getinfo());
 
-        reader1.takeBook("Петров И.И.");
+        reader1.takeBook("Петров И.И.","Приключения", "Словарь", "Энциклопедия");
+        reader3.returnBook("Сидоров В.Н.", "Приключения", "Словарь", "Энциклопедия");
 
     }
 }

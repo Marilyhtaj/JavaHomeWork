@@ -1,5 +1,7 @@
 package com.pb.lyhtaj.hw5;
 
+import java.util.Arrays;
+
 public class Reader {
     private String fio;
     private int numberticket;
@@ -49,17 +51,23 @@ public class Reader {
         this.numberphone = numberphone;
     }
 
-    public void takeBook (String fio){
-        count++;
-        System.out.println(fio + " взял" + count + " книги");
+    //public void takeBook (String fio, )
+
+    public void takeBook (String fio, String...namebooks){
+        System.out.println(fio + " взял книги: ");
+        for (String namebook : namebooks) {
+            System.out.println(namebook);
+        }
     }
 
-    // public void takeBook (String fio, String... namebooks) {
-    //     System.out.println(fio + "взял несколько книг" + namebooks.toString());
-    //     for (String namebook : namebooks) {
-    //         System.out.println(namebook);
-      //  }
-    //}
+    public void returnBook (String fio, String...namebooks){
+        System.out.println(fio + " вернул книги: ");
+        for (String namebook : namebooks) {
+            System.out.println(namebook);
+        }
+    }
+
+
         String getinfo (){
             return "Читатель: " + fio + "( номер билета: "  + numberticket + ", факультет: " + fakultet + ", дата рождения:  " + dob + ", номер телефона: " + numberphone + " )";
         }
