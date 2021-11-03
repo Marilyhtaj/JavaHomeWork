@@ -30,6 +30,6 @@ public class Book {
     }
 
     String getinfo(){
-        return namebook + "( " + autorbook + " " + year + " )";
+        return " Название книги: " + namebook + "( " + autorbook + " " + year + ")";
     }
 }

@@ -1,13 +1,13 @@
 package com.pb.lyhtaj.hw5;
 
-import java.util.Date;
-
 public class Reader {
     private String fio;
     private int numberticket;
     private String fakultet;
-    private int dob;
-    private long numberphone;
+    private String dob;
+    private String numberphone;
+
+    int count = 0;
 
     public String getFio() {
         return fio;
@@ -33,23 +33,34 @@ public class Reader {
         this.fakultet = fakultet;
     }
 
-    public int getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(int dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
-    public long getNumberphone() {
+    public String getNumberphone() {
         return numberphone;
     }
 
-    public void takeBook (String fio){
-        System.out.println(fio + " взял" + " книги");
-    }
-
-    public void setNumberphone(long numberphone) {
+    public void setNumberphone(String numberphone) {
         this.numberphone = numberphone;
     }
-}
+
+    public void takeBook (String fio){
+        count++;
+        System.out.println(fio + " взял" + count + " книги");
+    }
+
+    // public void takeBook (String fio, String... namebooks) {
+    //     System.out.println(fio + "взял несколько книг" + namebooks.toString());
+    //     for (String namebook : namebooks) {
+    //         System.out.println(namebook);
+      //  }
+    //}
+        String getinfo (){
+            return "Читатель: " + fio + "( номер билета: "  + numberticket + ", факультет: " + fakultet + ", дата рождения:  " + dob + ", номер телефона: " + numberphone + " )";
+        }
+    }
