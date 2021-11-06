@@ -1,7 +1,5 @@
 package com.pb.lyhtaj.hw5;
 
-import java.util.Arrays;
-
 public class Reader {
     private String fio;
     private int numberticket;
@@ -9,7 +7,13 @@ public class Reader {
     private String dob;
     private String numberphone;
 
-    int count = 0;
+    public Reader(String fio, int numberticket, String fakultet, String dob, String numberphone){
+        this.fio = fio;
+        this.numberticket = numberticket;
+        this.fakultet = fakultet;
+        this.dob = dob;
+        this.numberphone = numberphone;
+    }
 
     public String getFio() {
         return fio;
@@ -51,21 +55,41 @@ public class Reader {
         this.numberphone = numberphone;
     }
 
-    //public void takeBook (String fio, )
+    public void takeBook(String fio) {
+        System.out.println(fio + " взял " + Book.getCount() + " книги." );
+    }
 
-    public void takeBook (String fio, String...namebooks){
-        System.out.println(fio + " взял книги: ");
+    public void takeBook (String...namebooks){
+        System.out.println(this.fio + " взял книги: ");
+     for (String namebook : namebooks) {
+         System.out.println(namebook);
+    }
+    }
+
+    public void takeBook(Book...books) {
+        System.out.println(this.fio + " взял книги: ");
+        for (Book book : books){
+            System.out.println(book.getNamebook() + "( " + book.getAutorbook() + " " + book.getYear() + " )");
+        }
+    }
+
+    public void returnBook ( String...namebooks){
+        System.out.println(this.fio + " вернул книги: ");
         for (String namebook : namebooks) {
             System.out.println(namebook);
         }
     }
 
-    public void returnBook (String fio, String...namebooks){
-        System.out.println(fio + " вернул книги: ");
-        for (String namebook : namebooks) {
-            System.out.println(namebook);
+    public void returnBook (Book...books) {
+        System.out.println(this.fio + " вернул книги: ");
+        for (Book book : books){
+            System.out.println(book.getNamebook() + "( " + book.getAutorbook() + " " + book.getYear() + " )");
         }
     }
+
+   public void returnBook(String fio) {
+     System.out.println(fio + " вернул " + Book.getCount() + " книги." );
+   }
 
 
         String getinfo (){

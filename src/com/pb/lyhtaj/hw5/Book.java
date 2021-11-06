@@ -1,9 +1,25 @@
 package com.pb.lyhtaj.hw5;
 
 public class Book {
+
+    private static int count=0;
+
+    public static int getCount(){
+        return count;
+    }
+
     private String namebook;
     private String autorbook;
     private String year;
+
+
+    public Book(String namebook,String autorbook, String year){
+        this.namebook = namebook;
+        this.autorbook = autorbook;
+        this.year = year;
+        count++;
+
+    }
 
     public String getNamebook(){
         return namebook;
@@ -30,6 +46,6 @@ public class Book {
     }
 
     String getinfo(){
-        return " Название книги: " + namebook + "( " + autorbook + " " + year + ")";
+        return "Название книги: " + namebook + "( " + autorbook + " " + year + ")";
     }
 }
