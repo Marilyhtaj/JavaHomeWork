@@ -1,34 +1,43 @@
 package com.pb.lyhtaj.hw6;
 
-import java.util.Arrays;
-
 public class VetСlinic {
-    public static void main(String[] args) {
-       // Animal an = new Animal();
-        //an.setFood("мясо");
-        //an.sleep();
+    public static void main(String[] args) throws Exception {
 
-        //Dog dog = new Dog();
-        //dog.setFood("кости");
-        //dog.sleep();
+        Animal[] animals = new Animal[3];
+        animals[0] = new Animal("косточки","будка");
+        animals[1] = new Animal("мыши","дом");
+        animals[2] = new Animal("трава","конюшня");
 
-        Dog dog = new Dog("косточки", "будка", "Бобик", "такса");
-        Cat cat = new Cat("мыши", "дом", "Пушистик");
-        Horse horse = new Horse("трава", "конюшня", "Ураган", "черного цвета");
 
-        dog.sleep();
-        dog.eat();
-        dog.makeNoise();
+        Dog[] dogs = new Dog[1];
+        dogs[0] = new Dog("косточки", "будка", "Бобик", "такса");
+
+        Cat[] cats = new Cat[1];
+        cats[0] = new Cat("мыши", "дом", "Пушистик");
+
+        Horse[] horses = new Horse[1];
+        horses[0] = new Horse("трава", "конюшня", "Ураган", "черного цвета");
+
+        dogs[0].sleep();
+        dogs[0].eat();
+        dogs[0].makeNoise();
         System.out.println("");
 
-        cat.sleep();
-        cat.eat();
-        cat.makeNoise();
+        cats[0].sleep();
+        cats[0].eat();
+        cats[0].makeNoise();
         System.out.println("");
 
-        horse.sleep();
-        horse.eat();
-        horse.makeNoise();
+        horses[0].sleep();
+        horses[0].eat();
+        horses[0].makeNoise();
+        System.out.println("");
+
+
+        Class anClazz = Class.forName("com.pb.lyhtaj.hw6.Veterinarian");
+        Veterinarian vetDoc = (Veterinarian)anClazz.newInstance();
+        vetDoc.treatAnimal(animals);
+
 
     }
 }
