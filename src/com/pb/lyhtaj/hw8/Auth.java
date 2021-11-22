@@ -21,7 +21,6 @@ public class Auth {
         this.password = password;
     }
 
-    // Зарегистрироваться
 
 //    public void signUp(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
 //
@@ -45,17 +44,18 @@ public class Auth {
 
 
     public void signUp(String login, String password, String confirmPassword) throws WrongLoginException, WrongPasswordException {
-        if (Pattern.matches("[a-zA-Z0-9_]{5,20}]", login)) {
+        if (!Pattern.matches("[a-zA-Z0-9]{5,20}]", login)) {
             throw new WrongLoginException("Логин не соответветсвует требованиям!");
         }
-        if (Pattern.matches("[a-zA-Z0-9] {5}]", password)) {
+        else if (!Pattern.matches("[a-zA-Z0-9_]{5,1000}]", password)) {
             throw new WrongPasswordException("Пароль не соответветсвует требованиям!");
         }
-        if (password.equals(confirmPassword)) {
+        else if (!password.equals(confirmPassword)) {
+            throw new WrongPasswordException("Пароли не совпадают!");
+        } else {
             this.login = login;
             this.password = password;
             System.out.println("Регистрация прошла успешно!");
-        } else {
             throw new WrongPasswordException("Пароли не совпадают!");
         }
     }
