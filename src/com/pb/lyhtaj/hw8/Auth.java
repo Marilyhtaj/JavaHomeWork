@@ -6,12 +6,20 @@ public class Auth {
 
     protected String login;
     protected String password;
+    protected String confirmPassword;
 
+
+    public Auth(String login, String password,String confirmPassword) {
+        this.login = login;
+        this.password = password;
+        this.confirmPassword = confirmPassword;
+    }
 
     public Auth(String login, String password) {
         this.login = login;
         this.password = password;
     }
+
 
     // Зарегистрироваться
 

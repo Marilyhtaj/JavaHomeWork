@@ -7,6 +7,7 @@ public class Reader {
     private String dob;
     private String numberphone;
 
+
     public Reader(String fio, int numberticket, String fakultet, String dob, String numberphone){
         this.fio = fio;
         this.numberticket = numberticket;
@@ -71,6 +72,10 @@ public class Reader {
         for (Book book : books){
             System.out.println(book.getNamebook() + "( " + book.getAutorbook() + " " + book.getYear() + " )");
         }
+    }
+
+    public void takeBook(int bookCount) {
+        System.out.println(fio + " взял " + bookCount + " книги." );
     }
 
     public void returnBook ( String...namebooks){

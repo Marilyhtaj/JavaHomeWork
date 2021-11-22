@@ -20,6 +20,8 @@ public class Library {
         System.out.println(reader3.getinfo());
         System.out.println();
 
+        reader1.takeBook(2);
+        System.out.println();
         reader1.takeBook("Петров И.И.");
         System.out.println();
         reader1.takeBook("Приключения","Словарь","Энциклопедия");
@@ -31,5 +33,6 @@ public class Library {
         reader2.returnBook( "Приключения", "Словарь", "Энциклопедия");
         System.out.println();
         reader2.returnBook(book1,book2,book3);
+
     }
 }

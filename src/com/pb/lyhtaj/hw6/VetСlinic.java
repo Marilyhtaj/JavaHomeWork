@@ -3,10 +3,10 @@ package com.pb.lyhtaj.hw6;
 public class VetСlinic {
     public static void main(String[] args) throws Exception {
 
-        Animal[] animals = new Animal[3];
-        animals[0] = new Animal("косточки","будка");
-        animals[1] = new Animal("мыши","дом");
-        animals[2] = new Animal("трава","конюшня");
+              // Animal[] animals = new Animal[3];
+       // animals[0] = new Animal("косточки","будка");
+       // animals[1] = new Animal("мыши","дом");
+      //  animals[2] = new Animal("трава","конюшня");
 
 
         Dog[] dogs = new Dog[1];
@@ -17,6 +17,8 @@ public class VetСlinic {
 
         Horse[] horses = new Horse[1];
         horses[0] = new Horse("трава", "конюшня", "Ураган", "черного цвета");
+
+        Animal[] animals = new Animal[] {cats[0],dogs[0],horses[0]};
 
         dogs[0].sleep();
         dogs[0].eat();
