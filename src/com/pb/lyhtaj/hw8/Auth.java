@@ -56,7 +56,6 @@ public class Auth {
             this.login = login;
             this.password = password;
             System.out.println("Регистрация прошла успешно!");
-            throw new WrongPasswordException("Пароли не совпадают!");
         }
     }
 
