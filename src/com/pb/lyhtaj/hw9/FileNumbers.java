@@ -10,21 +10,21 @@ import java.util.Scanner;
 public class FileNumbers {
 
     public static void main(String[] args) throws Exception{
-        Path path = Paths.get("C:\\Users\\Мария\\Desktop\\Java\\numbers.txt");
+     //   Path path = Paths.get("C:\\Users\\Мария\\Desktop\\Java\\numbers.txt");
 
         createNumbersFile();
-        try (Scanner scan = new Scanner(path)){
-            System.out.println("Начинаем чтение файла...");
-            while (true){
-                String str = scan.nextLine();
-                System.out.println(str);
-            }
-        }catch (NoSuchElementException ex){
-            System.out.println("Строки для прочтения законились");
-            System.out.println( "--------------------------------");
-        } catch (IOException ex){
-            ex.printStackTrace();
-        }
+//        try (Scanner scan = new Scanner(path)){
+//            System.out.println("Начинаем чтение файла...");
+//            while (true){
+//                String str = scan.nextLine();
+//                System.out.println(str);
+//            }
+//        }catch (NoSuchElementException ex){
+//            System.out.println("Строки для прочтения законились");
+//            System.out.println( "--------------------------------");
+//        } catch (IOException ex){
+//            ex.printStackTrace();
+//        }
 
         createOddNumbersFile();
     }
@@ -55,14 +55,24 @@ public class FileNumbers {
         try (BufferedReader reader = Files.newBufferedReader(Paths.get("C:\\Users\\Мария\\Desktop\\Java\\numbers.txt"))){
             String line;
             while ((line = reader.readLine()) !=null){
-                System.out.println(line);
+                Writer writer1 = new FileWriter("C:\\Users\\Мария\\Desktop\\Java\\odd-numbers.txt");
+                int [] mas = new int[100];
+                for(int i=0;i< mas.length;i++) {
+                    if(i%2 == 1) {
+                        mas[i] = 0;
+                        writer1.write(line);
+                    }
+                }
+                //writer1.write(line);
+                writer1.close();
             }
             System.out.println();
+
     }catch (Exception ex){
             System.out.println("Ошибка чтения файла: " + ex);
         }
-        System.out.println("Чтение завершено");
+        System.out.println("Создан и записан новый файл");
+
+
+        }
     }
-
-
-}
