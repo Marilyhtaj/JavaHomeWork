@@ -7,9 +7,9 @@ public class Main {
            floatNumBox.add(0,3.6F);
            floatNumBox.add(1,56.5F);
            floatNumBox.add(2,4.8F);
-      //     floatNumBox.add(3,7.5F);
+           floatNumBox.add(3,7.5F);
        }catch (ArrayIndexOutOfBoundsException e){
-           System.out.println("В массиве закончилось место. Длина массива " + floatNumBox.length());
+           System.out.println("Ошибка добавления элемента. В массиве закончилось место. Вводят элемент массива больше " + floatNumBox.length());
              // e.printStackTrace();
        }
         Float float1 = floatNumBox.get(0);

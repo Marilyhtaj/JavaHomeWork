@@ -13,7 +13,7 @@ public class NumBox <T extends Number> {
 
     public void add(int index, T num)throws ArrayIndexOutOfBoundsException{
         if(index>numbers.length){
-            throw new ArrayIndexOutOfBoundsException("Ошибка!!! ");
+            throw new ArrayIndexOutOfBoundsException();
         } else numbers[index] = num;
     }
 
