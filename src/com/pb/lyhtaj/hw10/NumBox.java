@@ -3,31 +3,20 @@ package com.pb.lyhtaj.hw10;
 public class NumBox <T extends Number> {
     private T[] numbers;
 
-    public NumBox(int maxsize){
-        this.numbers = (T[]) new Number[maxsize];
+    public NumBox(int size){
+        this.numbers = (T[]) new Number[size];
     }
 
-    public NumBox(T[] numbers) {
-        this.numbers = numbers;
+    public T get(int index) {
+        return numbers[index];
     }
 
-    public T[] getNumbers() {
-        return numbers;
-    }
-
-    public void add(int index,T num)throws ArrayIndexOutOfBoundsException{
+    public void add(int index, T num)throws ArrayIndexOutOfBoundsException{
         if(index>numbers.length){
-            throw new ArrayIndexOutOfBoundsException();
+            throw new ArrayIndexOutOfBoundsException("Ошибка!!! ");
         } else numbers[index] = num;
     }
 
-//    public T get(int index){
-//        T get=0;
-//        for(int i=0;i< numbers.length;i++){
-//            T get+=;
-//        }
-//
-//    }
 
     public int length(){
         int length = 0;
