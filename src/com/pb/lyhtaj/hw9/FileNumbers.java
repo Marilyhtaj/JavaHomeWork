@@ -17,7 +17,7 @@ public class FileNumbers {
                  for(int j=0;j< size;j++){
                      array[i][j] = ((int) (Math.random() * 99) + 1);
                     System.out.print(array[i][j] + " ");
-                     writer.write(array[i][j] + "\n");
+                     writer.write(array[i][j] + " ");
                      }
                   System.out.println();
                  }
@@ -33,23 +33,24 @@ public class FileNumbers {
 
     public static void  createOddNumbersFile() throws Exception{
         try (Scanner reader = new Scanner (new File("C:\\Users\\Мария\\Desktop\\Java\\numbers.txt"));
-        Writer writer1 = new FileWriter("C:\\Users\\Мария\\Desktop\\Java\\odd-numbers.txt");) {
+        Writer writer1 = new FileWriter("C:\\Users\\Мария\\Desktop\\Java\\odd-numbers.txt")) {
             while (reader.hasNextLine()) {
                 Scanner line = new Scanner(reader.nextLine());
                 while (line.hasNextInt()) {
                     int dat = line.nextInt();
                     if (dat % 2 != 1) {
                         dat = 0;
-                        writer1.write(dat + ", ");
-                        System.out.print(dat + ", ");
-                    } else System.out.print(dat + ", ");
-                    writer1.write(dat + ", ");
+                        writer1.write(dat + " ");
+                        System.out.print(dat + " ");
+                    } else System.out.print(dat + " ");
+                    writer1.write(dat + " ");
                 }
                 line.close();
             }
         }catch (Exception ex){
             System.out.println("Ошибка чтения файла: " + ex);
         }
+        System.out.println(" ");
         System.out.println("Создан и записан новый файл");
     }
 }

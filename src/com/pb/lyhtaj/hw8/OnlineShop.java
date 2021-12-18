@@ -4,36 +4,64 @@ import java.util.Scanner;
 
 public class OnlineShop {
     public static void main(String[] args) {
+
         Scanner skan = new Scanner(System.in);
-        System.out.println("Приветствуем! Вы на странице регистрации");
+        Auth user = new Auth();
+
+        while (true) {
+            System.out.println("Приветствуем в ОнлайнМагазине!");
+            System.out.println("Выберите действие: ");
+            System.out.println("1 - Регистрация в ОнлайнМагазине");
+            System.out.println("2 - Вход в ОнлайнМагазин");
+            System.out.println("3 - Выход");
+
+            String choice = skan.nextLine();
+
+            switch (choice) {
+                case "1":
+                    signUp(skan, user);
+                    break;
+                case "2":
+                    signIn(skan, user);
+                    break;
+                case "3":
+                    System.out.println("Выход!");
+                    break;
+                default:
+                    System.out.println("Выбор не сделан!");
+            }
+        }
+    }
+    private static void signUp (Scanner skan, Auth user){
         System.out.println("Введите логин для регистрации: ");
-        String log = skan.nextLine();
+        String login = skan.nextLine();
         System.out.println("Введите пароль для регистрации: ");
-        String pass = skan.nextLine();
+        String password = skan.nextLine();
         System.out.println("Повторите пароль: ");
-        String confirmPass = skan.nextLine();
-        Auth user = new Auth(log,pass,confirmPass);
+        String confirmPassword = skan.nextLine();
 
         try {
-            user.signUp(log,pass,confirmPass);
-        } catch (WrongLoginException e1){
-            System.out.println(e1.getMessage());
-        }catch (WrongPasswordException e2){
-            System.out.println(e2.getMessage());
+            user.signUp(login, password, confirmPassword);
+            System.out.println("Регистрация прошла успешно!");
+        } catch (WrongLoginException e) {
+            System.out.println(e.getMessage());
+        } catch (WrongPasswordException e) {
+            System.out.println(e.getMessage());
         }
+    }
 
+    private static void signIn(Scanner skan, Auth user){
         System.out.println("Для входа в личный кабинет введите логин и пароль");
         System.out.println("Логин: ");
-        String log1 = skan.next();
+        String login = skan.next();
         System.out.println("Пароль: ");
-        String pass1 = skan.next();
-        Auth user1 = new Auth(log1,pass1);
+        String password = skan.next();
+
         try{
-            user1.signIn(log1,pass1);
-        } catch (WrongLoginException e3){
-            System.out.println(e3.getMessage());
-        }catch (WrongPasswordException e4){
-            System.out.println(e4.getMessage());
+            user.signIn(login,password);
+            System.out.println("Вход в кабинет осущетсвлен успешно");
+        } catch (WrongLoginException e){
+            System.out.println(e.getMessage());
         }
     }
 }
