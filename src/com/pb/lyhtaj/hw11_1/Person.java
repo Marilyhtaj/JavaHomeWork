@@ -6,22 +6,22 @@ import java.time.LocalDateTime;
 
 public class Person implements Serializable {
 
-    private String fio;
+    public String fio;
     private LocalDate db;
     private String adres;
     private String phone;
     private LocalDateTime editdatetime;
 
-//    public Person() {
-//    }
-
-    public Person(String fio, LocalDate db, String adres, String phone, LocalDateTime editdatetime) {
+    public Person(String fio,LocalDate db, String adres, String phone, LocalDateTime editdatetime) {
         this.fio = fio;
         this.db = db;
         this.adres = adres;
         this.phone = phone;
         this.editdatetime = editdatetime;
     }
+//
+//        public Person() {
+//        }
 
     public String getFio() {
         return fio;
